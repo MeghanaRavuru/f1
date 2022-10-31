@@ -4,6 +4,7 @@ import streamlit as st
 import numpy as np
 from io import BytesIO
 import streamlit.components.v1 as components
+from ctypes import *
 
 st.title('New Post')
 
