@@ -58,12 +58,6 @@ def voice_file(file):
     speech_recognition_result = speech_recognizer.recognize_once_async().get()
 
     if speech_recognition_result.reason == speechsdk.ResultReason.RecognizedSpeech:
-        print(speech_recognition_result.text)
         return speech_recognition_result.text
     elif speech_recognition_result.text =="":
         return "No hate speech detected"
-    elif speech_recognition_result.reason == speechsdk.ResultReason.NoMatch:
-        return speech_recognition_result.no_match_details
-    elif speech_recognition_result.reason == speechsdk.ResultReason.Canceled:
-        cancellation_details = speech_recognition_result.cancellation_details
-        return cancellation_details.reason
