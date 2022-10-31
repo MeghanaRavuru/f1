@@ -1,7 +1,4 @@
 import numpy as np
-# Splitting dataset for training and testing
-from sklearn.model_selection import train_test_split
-
 # Speech to Text
 api_key = '82c8268643b842bab6fe3905b8109f71'
 endpoint = 'https://centralindia.api.cognitive.microsoft.com/sts/v1.0/issuetoken'
@@ -24,11 +21,7 @@ X_ = cv.fit_transform(X)
 
 X_ = X_.toarray()
 
-X_train, X_test, y_train, y_test = train_test_split(X_, y, test_size=0.4, random_state=True)
-
 model = pickle.load(open('model.pkl', 'rb'))
-
-y_pred = model.predict(X_test)
 
 
 def detect_hate_speech(sample):
