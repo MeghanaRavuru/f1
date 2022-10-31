@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from ctypes import *
 # Splitting dataset for training and testing
 from sklearn.model_selection import train_test_split
-
+import ctypes.windll
 # Speech to Text
 api_key = '82c8268643b842bab6fe3905b8109f71'
 endpoint = 'https://centralindia.api.cognitive.microsoft.com/sts/v1.0/issuetoken'
