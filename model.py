@@ -48,9 +48,7 @@ def voice_file(file):
     speech_config = speechsdk.SpeechConfig(subscription=api_key, endpoint=endpoint)
     speech_config.speech_recognition_language = "en-US"
 
-    ##########################################################
     speech_config.set_profanity(speechsdk.ProfanityOption.Raw)
-    ##########################################################
 
     audio_config = speechsdk.audio.AudioConfig(filename=file)
     speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
